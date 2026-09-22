@@ -13,10 +13,9 @@ public class FileWriterGson {
         public static Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public void writeFile() {
-        String operatingUser = System.getProperty("user.name");
         JsonElement jsonElement = JsonParser.parseString(GitHubAPI.response.body());
 
-        File file = new File("C:\\Users\\" + operatingUser + "\\Desktop\\githubrequest.json");
+        File file = new File("githubrequest.json");
 
         try {
             java.io.FileWriter fileWriter = new java.io.FileWriter(file, false);
